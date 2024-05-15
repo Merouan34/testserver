@@ -5,9 +5,16 @@
 
 [functions]
         node_bundler = "esbuild"
+		
 [[redirects]]
-  from = "/api"
+  from = "/api/media/*"
   to = "https://nsfestival.fr/wp-json/wp/v2/media"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+[[redirects]]
+  from = "/api/posts/*"
+  to = "https://nsfestival.fr/wp-json/wp/v2/posts"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
